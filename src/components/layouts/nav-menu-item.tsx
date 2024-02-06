@@ -18,7 +18,7 @@ export default function MavMenuItem({
       className={cn(
         buttonVariants({variant:'ghost'}),
         pathname === item.path 
-          ? 'bg-primary' 
+          ? 'bg-primary text-primary-foreground' 
           : ''
       )}
     >
