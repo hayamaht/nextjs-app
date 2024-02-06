@@ -1,9 +1,7 @@
 import React from 'react'
-import { navbarMenu } from '@/lib/menu'
 import Link from 'next/link'
+import { navbarMenu } from '@/lib/menu'
 import { ModeToggle } from '../mode-toggle'
-import { cn } from '@/lib/utils'
-import { buttonVariants } from '../ui/button'
 import Logo from './logo'
 import Sidebar from './sidebar'
 
@@ -15,7 +13,7 @@ export default function Navbar() {
           <div className='flex-none '>
             <Logo />
           </div>
-          <div className='hidden sm:flex justify-between space-x-2'>
+          <div className='hidden sm:flex justify-between '>
             {navbarMenu.map((m, i) => (
               <Link key={i} href={m.path}
                 className=''
@@ -26,7 +24,9 @@ export default function Navbar() {
           </div>
           <div className='flex items-center space-x-2'>
             <ModeToggle />
-            <Sidebar />
+            <div className='block sm:hidden'>
+              <Sidebar />
+            </div>
           </div>
         </div>
       </div>
