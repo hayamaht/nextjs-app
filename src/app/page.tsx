@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div>
-      <Button>Click Me</Button>
+      {/* <Button>Click Me</Button>
       <ModeToggle />
       <Link href={'/login'}
         className={cn(
@@ -17,7 +17,7 @@ export default function Home() {
       >
         <LogInIcon className="h-4 w-4" />
         <span>Login</span>
-      </Link>
+      </Link> */}
     </div>
   );
 }
