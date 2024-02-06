@@ -4,6 +4,7 @@ import { navbarMenu } from '@/lib/menu'
 import { ModeToggle } from '../mode-toggle'
 import Logo from './logo'
 import Sidebar from './sidebar'
+import NavMenuItem from './nav-menu-item'
 
 export default function Navbar() {
   return (
@@ -13,13 +14,9 @@ export default function Navbar() {
           <div className='flex-none '>
             <Logo />
           </div>
-          <div className='hidden sm:flex justify-between space-x-4'>
+          <div className='hidden sm:flex items-center justify-between space-x-4'>
             {navbarMenu.map((m, i) => (
-              <Link key={i} href={m.path}
-                className=''
-              >
-                {m.title}
-              </Link>
+              <NavMenuItem key={i} item={m}/>
             ))}
           </div>
           <div className='flex items-center space-x-2'>
