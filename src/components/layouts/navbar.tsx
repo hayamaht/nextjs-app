@@ -13,7 +13,7 @@ export default function Navbar() {
           <div className='flex-none '>
             <Logo />
           </div>
-          <div className='hidden sm:flex justify-between '>
+          <div className='hidden sm:flex justify-between space-x-4'>
             {navbarMenu.map((m, i) => (
               <Link key={i} href={m.path}
                 className=''
