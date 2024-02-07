@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/layouts/navbar";
 import Footer from "@/components/layouts/footer";
+import { Toaster } from "sonner";
 
 const roboto = Roboto({ 
   subsets: ['latin'],
@@ -42,6 +43,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </ThemeProvider>
+        <Toaster theme="system" expand={true} richColors />
       </body>
     </html>
   );
