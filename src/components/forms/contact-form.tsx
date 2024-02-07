@@ -8,13 +8,17 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { SendIcon } from "lucide-react";
 import { toast } from "sonner";
+import { Textarea } from "../ui/textarea";
 
 const FormSchema = z.object({
   name: z.string().min(1, {
     message: "Name must be at least 1 character."
   }),
   email: z.string().email("Email must be valid input."),
-  phone: z.string().optional()
+  phone: z.string().optional(),
+  messages: z.string().min(1, {
+    message: 'Message is not empty.'
+  })
 });
 
 export default function ContactForm() {
@@ -82,6 +86,22 @@ export default function ContactForm() {
               </FormControl>
               <FormDescription>
                 This is your phone (optional).
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}      
+        />
+
+        <FormField control={form.control}
+          name="messages"
+          render={( {field} ) => (
+            <FormItem>
+              <FormLabel>Messages</FormLabel>
+              <FormControl>
+                <Textarea placeholder="Your messages..." rows={10} {...field} />
+              </FormControl>
+              <FormDescription>
+                This is your messages.
               </FormDescription>
               <FormMessage />
             </FormItem>
