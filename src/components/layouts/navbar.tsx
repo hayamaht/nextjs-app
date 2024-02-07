@@ -13,7 +13,7 @@ export default function Navbar() {
   const isAdmin = true;
 
   return (
-    <div className='border-b border-border bg-background/90 shadow-md'>
+    <div className='border-b border-border bg-background/50 shadow-md sticky top-0 backdrop-blur'>
       <div className='container mx-auto '>
         <div className='flex items-center justify-between h-14'>
           <div className='flex-none '>
