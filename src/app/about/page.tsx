@@ -35,7 +35,7 @@ export default function AboutPage() {
       </div>
       <div className='relative flex-1 h-96'>
         <Image src={'/about.png'} alt='About Image' 
-          fill priority 
+          fill priority sizes='500px'
           className='object-contain'
         />
       </div>
