@@ -11,3 +11,14 @@ export const getPosts = async () => {
     throw new Error("Failed to fetch posts!");
   }
 };
+
+export const getPost = async (slug: string) => {
+  try {
+    connectToDb();
+    const post = await Post.findOne({ slug });
+    return post;
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to fetch post!");
+  }
+};

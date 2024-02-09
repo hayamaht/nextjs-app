@@ -19,27 +19,20 @@ export default function PostCard(
   // { post }: Props
 ) {
   return (
-    <Card className='max-w-52 '>
+    <Card className='shadow-md'>
       <div className='relative h-40 '>
-        <Image src='/post.jpg' alt='' fill priority sizes='300px'
+        <Image src='/post.jpg' alt='post image' fill priority sizes='300px'
           className='object-cover rounded-t-lg'
         />
       </div>
       <CardHeader>
-        <CardTitle>Title</CardTitle>
-        <CardDescription>Desc</CardDescription>
+        <CardTitle>Title Dsdf Dasddrge asd asa sd </CardTitle>
+        <CardDescription>2024-01-23</CardDescription>
       </CardHeader>
-      <CardContent>
-        {/* { post.image && (
-          <div className='relative'>
-            <Image src={post.image} alt='' fill
-              className=''
-            />
-          </div>
-        )} */}
-      </CardContent>
+      {/* <CardContent>
+      </CardContent> */}
       <CardFooter>
-        <Link href={'/'}
+        <Link href={'/blog/test'}
           className={cn(
             buttonVariants(),
             'w-full'
