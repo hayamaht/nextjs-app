@@ -16,7 +16,7 @@ interface Props {
 }
 
 export default function PostCard(
-  // { post }: Props
+  { post }: Props
 ) {
   return (
     <Card className='shadow-md'>
@@ -26,13 +26,15 @@ export default function PostCard(
         />
       </div>
       <CardHeader>
-        <CardTitle>Title Dsdf Dasddrge asd asa sd </CardTitle>
-        <CardDescription>2024-01-23</CardDescription>
+        <CardTitle>{ post.title }</CardTitle>
+        <CardDescription>
+          {/* { post.createdAt.toString() } */}
+        </CardDescription>
       </CardHeader>
       {/* <CardContent>
       </CardContent> */}
       <CardFooter>
-        <Link href={'/blog/test'}
+        <Link href={`/blog/${post.slug}`}
           className={cn(
             buttonVariants(),
             'w-full'
