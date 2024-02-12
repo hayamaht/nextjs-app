@@ -14,7 +14,6 @@ export const generateMetadata = async ({
   params: { slug: string }
 }) => {
   const { slug } = params;
-
   const post = await getPost(slug);
 
   if (!post) {
@@ -33,12 +32,13 @@ export default async function BlogSlugPage({
   params: { slug: string }
 }) {
   const { slug } = params;
-
   const post = await getPost(slug);
 
   if (!post) {
     return redirect('/');
   }
+
+  console.log(post);
 
   return (
     <section className='container mx-auto p-10'>
@@ -73,7 +73,7 @@ export default async function BlogSlugPage({
               className='object-cover rounded-sm'
             />
           </div>
-        ) : null }
+        ) : null } 
         <div className='my-8 space-y-4'>
           { post.desc }
         </div>
