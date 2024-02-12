@@ -14,15 +14,23 @@ export const generateMetadata = async ({
 }) => {
   const { slug } = params;
 
-  //const post = await getPost(slug);
+  const post = await getPost(slug);
 
   return {
-    title: 'Title Titke',//post.title,
-    description: 'lorme asd asd df adg a f',//post.desc,
+    title: post.title,
+    description: post.desc,
   };
 }
 
-export default function BlogSlugPage() {
+export default async function BlogSlugPage({ 
+  params 
+}: { 
+  params: { slug: string }
+}) {
+  const { slug } = params;
+
+  const post = await getPost(slug);
+
   return (
     <section className='container mx-auto p-10'>
       <div>
@@ -37,7 +45,9 @@ export default function BlogSlugPage() {
         </Link>
       </div>
       <div>
-        <h2 className='text-4xl font-bold py-4'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, delectus </h2>
+        <h2 className='text-4xl font-bold py-4'>
+          { post.title }
+        </h2>
         <div className='flex items-center space-x-5 p-5'>
           <Avatar className='ring-2 ring-primary ring-offset-2 ring-offset-background'>
             <AvatarImage src='/people.jpg' />
@@ -48,24 +58,15 @@ export default function BlogSlugPage() {
             2024-02-23 13:23:12
           </div>
         </div>
-        <div className='relative w-full h-96 '>
-          <Image src={'/post.jpg'} alt='' fill priority sizes='500px'
-            className='object-cover rounded-sm'
-          />
-        </div>
+        { post.img ? (
+          <div className='relative w-full h-96 '>
+            <Image src={post.img} alt='' fill priority sizes='500px'
+              className='object-cover rounded-sm'
+            />
+          </div>
+        ) : null }
         <div className='my-8 space-y-4'>
-          <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, delectus eum tempore ratione laboriosam facilis molestias possimus accusamus cum ea blanditiis accusantium architecto facere atque rem recusandae iusto necessitatibus vitae!
-          </p>
-          <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, incidunt ipsam. Ea, quis facilis! Libero sequi officia enim maiores accusantium magnam molestiae. Omnis, optio rem beatae alias sunt maiores voluptatem?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae adipisci temporibus corporis quod officia repellendus deserunt maiores provident nulla mollitia ab unde, eligendi tempore ducimus totam ratione debitis voluptate dolore.
-          </p>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum incidunt itaque quaerat, quisquam iste, fugiat quidem vitae laborum quo voluptatibus doloremque nam! Fuga modi similique qui unde mollitia aliquid eaque!
-          </p>
+          { post.desc }
         </div>
       </div>
     </section>
