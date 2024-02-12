@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { ArrowLeftIcon, BackpackIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 import React from 'react'
 
 export const generateMetadata = async ({ 
@@ -15,6 +16,10 @@ export const generateMetadata = async ({
   const { slug } = params;
 
   const post = await getPost(slug);
+
+  if (!post) {
+    return redirect('/');
+  }
 
   return {
     title: post.title,
@@ -30,6 +35,10 @@ export default async function BlogSlugPage({
   const { slug } = params;
 
   const post = await getPost(slug);
+
+  if (!post) {
+    return redirect('/');
+  }
 
   return (
     <section className='container mx-auto p-10'>
