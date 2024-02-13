@@ -1,3 +1,4 @@
+import PostUser from '@/components/post-user';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { buttonVariants } from '@/components/ui/button';
 import { getPost } from '@/lib/data';
@@ -58,12 +59,13 @@ export default async function BlogSlugPage({
           { post.title }
         </h2>
         <div className='flex items-center space-x-5 p-5'>
-          <Avatar className='ring-2 ring-primary ring-offset-2 ring-offset-background'>
+          {/* <Avatar className='ring-2 ring-primary ring-offset-2 ring-offset-background'>
             <AvatarImage src='/people.jpg' />
             <AvatarFallback>Y</AvatarFallback>
           </Avatar>
-          <p className='flex-1'>Doe Jone</p>
-          <div className='justify-items-end text-sm font-serif'>
+          <p className='flex-1'>Doe Jone</p> */}
+          <PostUser userId={post.userId} />
+          <div className='text-sm font-serif'>
             2024-02-23 13:23:12
           </div>
         </div>
