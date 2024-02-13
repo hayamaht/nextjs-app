@@ -1,6 +1,12 @@
 import PostCard from '@/components/post-card';
 import { getPosts } from '@/lib/data';
+import { Metadata } from 'next';
 import React from 'react'
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "Blog desc"
+};
 
 export default async function BlogPage() {
   const posts = await getPosts();
