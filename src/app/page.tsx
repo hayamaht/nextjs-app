@@ -16,7 +16,8 @@ export default function Home() {
           <Button variant={'ghost'} className="">Contact</Button>
         </div>
         <div className="w-[500px] h-[50px] relative grayscale">
-          <Image src="/brands.png" alt="" fill priority 
+          <Image src="/brands.png" alt="" 
+            fill priority sizes="500px"
             className=""
           />
         </div>
