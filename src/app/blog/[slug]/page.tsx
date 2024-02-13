@@ -59,14 +59,9 @@ export default async function BlogSlugPage({
           { post.title }
         </h2>
         <div className='flex items-center space-x-5 p-5'>
-          {/* <Avatar className='ring-2 ring-primary ring-offset-2 ring-offset-background'>
-            <AvatarImage src='/people.jpg' />
-            <AvatarFallback>Y</AvatarFallback>
-          </Avatar>
-          <p className='flex-1'>Doe Jone</p> */}
           <PostUser userId={post.userId} />
-          <div className='text-sm font-serif'>
-            2024-02-23 13:23:12
+          <div className='flex-1 text-right text-sm font-serif'>
+            { post.createdAt.toString().slice(0,16) }
           </div>
         </div>
         { post.img ? (
